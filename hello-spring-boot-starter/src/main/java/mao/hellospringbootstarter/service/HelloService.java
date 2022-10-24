@@ -1,6 +1,8 @@
 package mao.hellospringbootstarter.service;
 
 import mao.hellospringbootstarter.config.HelloConfigProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * Project name(项目名称)：spring_boot_starter_demo
@@ -15,6 +17,7 @@ import mao.hellospringbootstarter.config.HelloConfigProperties;
  * Description(描述)： 无
  */
 
+//@Service
 public class HelloService
 {
     /**
@@ -22,6 +25,7 @@ public class HelloService
      */
     private final HelloConfigProperties helloConfigProperties;
 
+    @Autowired
     public HelloService(HelloConfigProperties helloConfigProperties)
     {
         this.helloConfigProperties = helloConfigProperties;

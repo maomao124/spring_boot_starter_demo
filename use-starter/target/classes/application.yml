@@ -1,1 +1,9 @@
+server:
+  port: 8086
+
+hello:
+  name: 张三
+  sex: 男
+  age: 18
+  address: 中国
 

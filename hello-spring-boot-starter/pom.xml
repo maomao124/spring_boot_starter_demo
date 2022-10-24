@@ -13,7 +13,6 @@
     <version>0.0.1</version>
     <name>hello-spring-boot-starter</name>
     <description>hello-spring-boot-starter</description>
-    <packaging>pom</packaging>
 
     <properties>
         <java.version>11</java.version>
@@ -27,15 +26,21 @@
         </dependency>
 
         <!--spring boot starter开发依赖-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
 
     </dependencies>
 
@@ -44,6 +49,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
             </plugin>
         </plugins>
     </build>

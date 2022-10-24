@@ -1,6 +1,7 @@
 package mao.hellospringbootstarter.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 /**
  * Project name(项目名称)：spring_boot_starter_demo
@@ -15,7 +16,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * Description(描述)： 无
  */
 
-
+//@Component
 @ConfigurationProperties(prefix = "hello")
 public class HelloConfigProperties
 {

@@ -1,11 +1,16 @@
 package mao.hellospringbootstarter.config;
 
 import mao.hellospringbootstarter.service.HelloService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
+import javax.annotation.PostConstruct;
 
 /**
  * Project name(项目名称)：spring_boot_starter_demo
@@ -22,15 +27,27 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableConfigurationProperties(HelloConfigProperties.class)
+//@ComponentScan(basePackageClasses = {HelloService.class})
 public class HelloServiceAutoConfiguration
 {
 
+    /**
+     * 日志
+     */
+    private static final Logger log = LoggerFactory.getLogger(HelloServiceAutoConfiguration.class);
 
     @Bean
     @ConditionalOnMissingBean
     public HelloService helloService(@Autowired HelloConfigProperties helloConfigProperties)
     {
+        log.info("初始化bean:HelloService");
         return new HelloService(helloConfigProperties);
+    }
+
+    @PostConstruct
+    public void init()
+    {
+        log.info("初始化bean");
     }
 
 }
