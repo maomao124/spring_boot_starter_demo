@@ -4,6 +4,6 @@ server:
 hello:
   name: 张三
   sex: 男
-  age: 18
+  age: 21
   address: 中国
 
