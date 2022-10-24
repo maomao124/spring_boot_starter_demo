@@ -24,7 +24,7 @@ public class HelloConfigProperties
      */
     private String name;
     /**
-     * 性
+     * 性别
      */
     private String sex;
     /**

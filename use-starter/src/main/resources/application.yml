@@ -1,1 +1,9 @@
+server:
+  port: 9090
+
+hello:
+  name: 张三
+  sex: 男
+  age: 18
+  address: 中国
 
